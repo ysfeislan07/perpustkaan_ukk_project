@@ -1,0 +1,8 @@
+.pinjam-buku .move {
+    transform: scale(1);
+    transition: transform 0.2s ease;
+}
+
+.pinjam-buku .move:hover {
+    text-decoration: none;
+}
