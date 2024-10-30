@@ -26,7 +26,7 @@ class user extends CI_Controller {
 		$this->load->model('History_model');
 
 		if(!$this->session->userdata('email')) {
-			$this->session->set_flashdata('message', '<div class="col-12 mb-3 btn btn-danger" role="alert">Please login, you dont have session active!</div>');
+			$this->session->set_flashdata('message', 'Please login, you dont have session active!');
 			redirect('auth');
 		}
 	}
@@ -84,7 +84,7 @@ class user extends CI_Controller {
 			$this->db->where('users_id', $id);
 			$this->db->update('users', $data);
 
-			$this->session->set_flashdata('message', '<div class="col-12 mb-3 btn btn-success" role="alert">Profile is changed!</div>');
+			$this->session->set_flashdata('message', 'Berhasil mengubah profile');
 			redirect('user/profile');
 		}
 	}
@@ -93,7 +93,7 @@ class user extends CI_Controller {
 	{
 		$users = $this->db->get_where('users', ['users_id' => $id_users])->row_array();
 		if(!$users['address'] || !$users['username'] || !$users['telp']) {
-			$this->session->set_flashdata('message', '<div class="col-12 mb-3 btn btn-danger" role="alert">Completed your biodata profile!</div>');
+			$this->session->set_flashdata('message', 'Completed your biodata profile!');
 			redirect('menu/loansBook');
 		}
 
@@ -116,14 +116,14 @@ class user extends CI_Controller {
 				];
 				
 				$this->db->insert('loans', $data);
-				$this->session->set_flashdata('message', '<div class="col-12 mb-3 btn btn-success" role="alert">Book success to loans!</div>');
+				$this->session->set_flashdata('message', 'Book success to loans!');
 				redirect('menu/loansBook');
 			} else {
-				$this->session->set_flashdata('message', '<div class="col-12 mb-3 btn btn-danger" role="alert">You already loans this book!</div>');
+				$this->session->set_flashdata('message-error', 'You already loans this book!');
 				redirect('menu/loansBook');
 			}
 		} else {
-			$this->session->set_flashdata('message', '<div class="col-12 mb-3 btn btn-danger" role="alert">You already maximum capacity loans book!</div>');
+			$this->session->set_flashdata('message-error', 'You already maximum capacity loans book!');
 			redirect('menu/loansBook');
 		}
 	}
@@ -132,7 +132,7 @@ class user extends CI_Controller {
 	{
 		$this->db->where('loans_id', $id);
 		$this->db->delete('loans');
-		$this->session->set_flashdata('message', '<div class="col-12 mb-3 btn btn-success" role="alert">Success delete your progress loans!</div>');
+		$this->session->set_flashdata('message', 'Success delete your progress loans!');
 		redirect('user/activityLoans');
 	}
 
@@ -189,15 +189,15 @@ class user extends CI_Controller {
 				];
 				
 				$this->db->insert('personal_collections', $data);
-				$this->session->set_flashdata('message', '<div class="col-12 mb-3 btn btn-success" role="alert">Success add book to collections!</div>');
+				$this->session->set_flashdata('message', 'Success add book to collections!');
 				redirect('menu/loansBook');
 			} else {
-				$this->session->set_flashdata('message', '<div class="col-12 mb-3 btn btn-danger" role="alert">Book already add to collections!</div>');
+				$this->session->set_flashdata('message', 'Book already add to collections!');
 				redirect('menu/loansBook');
 			}
 			
 		} else {
-			$this->session->set_flashdata('message', '<div class="col-12 mb-3 btn btn-danger" role="alert">Collections is full!</div>');
+			$this->session->set_flashdata('message', 'Collections is full!');
 			redirect('menu/loansBook');
 		}
 	}
@@ -206,7 +206,7 @@ class user extends CI_Controller {
 	{
 		$this->db->where('collections_id', $id);
 		$this->db->delete('personal_collections');
-		$this->session->set_flashdata('message', '<div class="col-12 mb-3 btn btn-success" role="alert">Your book success to delete from collections!</div>');
+		$this->session->set_flashdata('message', 'Your book success to delete from collections!');
 		redirect('user/personalCollections');
 	}
 
@@ -225,7 +225,7 @@ class user extends CI_Controller {
 
 		$this->db->where('loans_id', $id);
 		$this->db->update('loans', $data);
-		$this->session->set_flashdata('message', '<div class="col-12 mb-3 btn btn-success" role="alert">Success add extension day to loans book!</div>');
+		$this->session->set_flashdata('message', 'Success add extension day to loans book!');
 		redirect('user/activityLoans');
 	}
 
@@ -249,7 +249,7 @@ class user extends CI_Controller {
 		$this->db->where('loans_id', $id);
 		$this->db->update('loans', $data_confirm);
 
-		$this->session->set_flashdata('message', '<div class="col-12 mb-3 btn btn-success" role="alert">Success to rate this book loans. Thankyou!</div>');
+		$this->session->set_flashdata('message', 'Success to rate this book loans. Thankyou!');
 		redirect('user/activityLoans');
 	}
 

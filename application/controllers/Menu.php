@@ -27,7 +27,7 @@ class Menu extends CI_Controller {
 		$this->load->model('Users_model');
 
 		if(!$this->session->userdata('email')) {
-			$this->session->set_flashdata('message', '<div class="col-12 mb-3 btn btn-danger" role="alert">Please login, you dont have session active!</div>');
+			$this->session->set_flashdata('message', 'Please login, you dont have session active!');
 			redirect('auth');
 		}
 	}

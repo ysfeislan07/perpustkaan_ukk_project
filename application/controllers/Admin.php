@@ -32,7 +32,7 @@ class Admin extends CI_Controller {
 		}
 
 		if(!$this->session->userdata('email')) {
-			$this->session->set_flashdata('message', '<div class="col-12 mb-3 btn btn-danger" role="alert">Please login, you dont have session active!</div>');
+			$this->session->set_flashdata('message', 'Please login, you dont have session active!');
 			redirect('auth');
 		}
 	}
@@ -112,7 +112,7 @@ class Admin extends CI_Controller {
 
 			$this->db->insert('book_categories', $data_categories);
 
-			$this->session->set_flashdata('message', '<div class="col-12 mb-3 btn btn-success" role="alert">Success add new book!</div>');
+			$this->session->set_flashdata('message', 'Success add new book!');
 			redirect('admin/dataBook');
 		}
 	}
@@ -179,7 +179,7 @@ class Admin extends CI_Controller {
 			$this->db->where('book_categories_id', $id_categories);
 			$this->db->update('book_categories', $data_categories);
 
-			$this->session->set_flashdata('message', '<div class="col-12 mb-3 btn btn-success" role="alert">Success edite book!</div>');
+			$this->session->set_flashdata('message', 'Success edite book!');
 			redirect('admin/dataBook');
 		}
 	}
@@ -189,7 +189,7 @@ class Admin extends CI_Controller {
 		$this->db->where('book_id', $id);
 		$this->db->delete('book');
 
-		$this->session->set_flashdata('message', '<div class="col-12 mb-3 btn btn-success" role="alert">Success delete book!</div>');
+		$this->session->set_flashdata('message', 'Success delete book!');
 		redirect('admin/dataBook');
 	}
 
@@ -237,7 +237,7 @@ class Admin extends CI_Controller {
 			];
 
 			$this->db->insert('users', $data);
-			$this->session->set_flashdata('message', '<div class="col-12 mb-3 btn btn-success" role="alert">Success dadd new admin!</div>');
+			$this->session->set_flashdata('message', 'Success dadd new admin!');
 			redirect('admin/dataAdmin');
 		}
 	}
@@ -284,7 +284,7 @@ class Admin extends CI_Controller {
 			$this->db->where('users_id', $id);
 			$this->db->update('users', $data);
 
-			$this->session->set_flashdata('message', '<div class="col-12 mb-3 btn btn-success" role="alert">Success edite admin!</div>');
+			$this->session->set_flashdata('message', 'Success edite admin!');
 			redirect('admin/dataAdmin');
 		}
 	}
@@ -295,7 +295,7 @@ class Admin extends CI_Controller {
 		$this->db->where('users_id', $id);
 		$this->db->delete('users');
 
-		$this->session->set_flashdata('message', '<div class="col-12 mb-3 btn btn-success" role="alert">Success delete admin!</div>');
+		$this->session->set_flashdata('message', 'Success delete admin!');
 		redirect('admin/dataAdmin');
 	}
 
@@ -333,7 +333,7 @@ class Admin extends CI_Controller {
 
 			$this->db->insert('categories', $data);
 
-			$this->session->set_flashdata('message', '<div class="col-12 mb-3 btn btn-success" role="alert">Success add new categories!</div>');
+			$this->session->set_flashdata('message', 'Success add new categories!');
 			redirect('admin/dataCategories');
 		}
 	}
@@ -364,7 +364,7 @@ class Admin extends CI_Controller {
 			$this->db->where('categories_id', $id);
 			$this->db->update('categories', $data);
 
-			$this->session->set_flashdata('message', '<div class="col-12 mb-3 btn btn-success" role="alert">Success editen categories!</div>');
+			$this->session->set_flashdata('message', 'Success editen categories!');
 			redirect('admin/dataCategories');
 		}
 	}
@@ -374,7 +374,7 @@ class Admin extends CI_Controller {
 		$this->db->where('categories_id', $id);
 		$this->db->delete('categories');
 
-		$this->session->set_flashdata('message', '<div class="col-12 mb-3 btn btn-success" role="alert">Success delete categories!</div>');
+		$this->session->set_flashdata('message', 'Success delete categories!');
 		redirect('admin/dataCategories');
 	}
 	public function dataStaff()
@@ -421,7 +421,7 @@ class Admin extends CI_Controller {
 			];
 
 			$this->db->insert('users', $data);
-			$this->session->set_flashdata('message', '<div class="col-12 mb-3 btn btn-success" role="alert">Success add new staff!</div>');
+			$this->session->set_flashdata('message', 'Success add new staff!');
 			redirect('admin/dataStaff');
 		}
 	}
@@ -468,7 +468,7 @@ class Admin extends CI_Controller {
 			$this->db->where('users_id', $id);
 			$this->db->update('users', $data);
 
-			$this->session->set_flashdata('message', '<div class="col-12 mb-3 btn btn-success" role="alert">Success edite staff!</div>');
+			$this->session->set_flashdata('message', 'Success edite staff!');
 			redirect('admin/dataStaff');
 		}
 	}
@@ -478,7 +478,7 @@ class Admin extends CI_Controller {
 		$this->db->where('users_id', $id);
 		$this->db->delete('users');
 
-		$this->session->set_flashdata('message', '<div class="col-12 mb-3 btn btn-success" role="alert">Success delete staff!</div>');
+		$this->session->set_flashdata('message', 'Success delete staff!');
 		redirect('admin/dataStaff');
 	}
 	public function dataUsers()
@@ -525,7 +525,7 @@ class Admin extends CI_Controller {
 			];
 
 			$this->db->insert('users', $data);
-			$this->session->set_flashdata('message', '<div class="col-12 mb-3 btn btn-success" role="alert">Success add new users!</div>');
+			$this->session->set_flashdata('message', 'Success add new users!');
 			redirect('admin/dataUsers');
 		}
 	}
@@ -572,7 +572,7 @@ class Admin extends CI_Controller {
 			$this->db->where('users_id', $id);
 			$this->db->update('users', $data);
 
-			$this->session->set_flashdata('message', '<div class="col-12 mb-3 btn btn-success" role="alert">Success edite users!</div>');
+			$this->session->set_flashdata('message', 'Success edite users!');
 			redirect('admin/dataUsers');
 		}
 	}
@@ -582,7 +582,7 @@ class Admin extends CI_Controller {
 		$this->db->where('users_id', $id);
 		$this->db->delete('users');
 
-		$this->session->set_flashdata('message', '<div class="col-12 mb-3 btn btn-success" role="alert">Success delete users!</div>');
+		$this->session->set_flashdata('message', 'Success delete users!');
 		redirect('admin/dataUsers');
 	}
 
@@ -629,7 +629,7 @@ class Admin extends CI_Controller {
 		$qty = 1;
 		$this->Loans_model->minStok($book_id, $qty);
 		
-		$this->session->set_flashdata('message', '<div class="col-12 mb-3 btn btn-success" role="alert">Success accepted users to loans book!</div>');
+		$this->session->set_flashdata('message', 'Success accepted users to loans book!');
 		redirect('admin/dataActivityLoans');
 	}
 	public function deleteLoans($id)
@@ -637,7 +637,7 @@ class Admin extends CI_Controller {
 		$this->db->where('loans_id', $id);
 		$this->db->delete('loans');
 
-		$this->session->set_flashdata('message', '<div class="col-12 mb-3 btn btn-success" role="alert">Success delete progress users loans!</div>');
+		$this->session->set_flashdata('message', 'Success delete progress users loans!');
 		redirect('admin/dataActivityLoans');
 	}
 
@@ -652,7 +652,7 @@ class Admin extends CI_Controller {
 		$this->db->where('loans_id', $id);
 		$this->db->update('loans', $data);
 
-		$this->session->set_flashdata('message', '<div class="col-12 mb-3 btn btn-success" role="alert">Users already taken book in loans!</div>');
+		$this->session->set_flashdata('message', 'Users already taken book in loans!');
 		redirect('admin/dataActivityLoans');
 	}
 	public function accFinishLoans($id, $book_id)
@@ -665,7 +665,7 @@ class Admin extends CI_Controller {
 		$this->db->where('loans_id', $id);
 		$this->db->update('loans', $data);
 
-		$this->session->set_flashdata('message', '<div class="col-12 mb-3 btn btn-success" role="alert">Users already taken book in loans!</div>');
+		$this->session->set_flashdata('message', 'Users already taken book in loans!');
 		redirect('admin/dataActivityLoans');
 	}
 

@@ -13,6 +13,7 @@
 	<link rel="shortcut icon" href="img/icons/icon-48x48.png" />
 
 	<link rel="canonical" href="https://demo-basic.adminkit.io/pages-sign-up.html" />
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 	<title><?= $title ?></title>
 

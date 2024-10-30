@@ -14,7 +14,6 @@
 
 						<div class="card">
 							<div class="card-body">
-								<?= $this->session->flashdata('message') ?>
 								<div class="m-sm-3">
 									<form action="<?= base_url('auth') ?>" method="post">
 										<div class="mb-3">
